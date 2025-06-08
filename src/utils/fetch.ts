@@ -56,3 +56,14 @@ export function update(url: string, body: unknown) {
         body: JSON.stringify(body),
     });
 }
+
+export function edit(url: string, body: unknown) {
+    return fetch(url, {
+        method: "PATCH",
+        headers: {
+            "X-Auth-Email": email,
+            "X-Auth-Key": apiKey,
+        },
+        body: JSON.stringify(body),
+    });
+}
