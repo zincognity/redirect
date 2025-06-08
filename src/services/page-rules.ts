@@ -1,8 +1,13 @@
 import { zoneId } from "../core/config";
+import type { PageRuleResponse } from "../core/types";
 import { get, post, remove, update } from "../utils/fetch";
 
-export function getPageRules() {
-    return get(`https://api.cloudflare.com/client/v4/zones/${zoneId}`);
+export async function getListPageRules(): Promise<PageRuleResponse> {
+    const response = await get(
+        `https://api.cloudflare.com/client/v4/zones/${zoneId}/pagerules`
+    );
+    const data = await response.json();
+    return data;
 }
 
 export function getRuleDetails(id: string) {
