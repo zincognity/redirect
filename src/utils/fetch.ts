@@ -1,4 +1,4 @@
-import { apiKey, email } from "../core/config";
+import { token } from "../core/config";
 
 interface QueryInterface {
     name: string;
@@ -19,8 +19,7 @@ export function get(url: string, ...query: QueryInterface[]) {
     return fetch(fullUrl, {
         method: "GET",
         headers: {
-            "X-Auth-Email": email,
-            "X-Auth-Key": apiKey,
+            Authorization: `Bearer ${token}`,
         },
     });
 }
@@ -29,8 +28,7 @@ export function post(url: string, body: unknown) {
     return fetch(url, {
         method: "POST",
         headers: {
-            "X-Auth-Email": email,
-            "X-Auth-Key": apiKey,
+            Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(body),
     });
@@ -40,8 +38,7 @@ export function remove(url: string, id: string) {
     return fetch(`${url}/${id}`, {
         method: "DELETE",
         headers: {
-            "X-Auth-Email": email,
-            "X-Auth-Key": apiKey,
+            Authorization: `Bearer ${token}`,
         },
     });
 }
@@ -50,8 +47,7 @@ export function update(url: string, body: unknown) {
     return fetch(url, {
         method: "PUT",
         headers: {
-            "X-Auth-Email": email,
-            "X-Auth-Key": apiKey,
+            Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(body),
     });
@@ -61,8 +57,7 @@ export function edit(url: string, body: unknown) {
     return fetch(url, {
         method: "PATCH",
         headers: {
-            "X-Auth-Email": email,
-            "X-Auth-Key": apiKey,
+            Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(body),
     });
