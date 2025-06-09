@@ -1,6 +1,7 @@
 export const {
     CLOUDFLARE_TOKEN: token,
+    CLOUDFLARE_EMAIL: email,
     ZONE_ID: zoneId,
     SITE: site,
-    PAGE_URL: pageUrl,
+    PUBLIC_URL: pageUrl,
 } = import.meta.env;

@@ -1,4 +1,4 @@
-import { token } from "@/core/config";
+import { email, token } from "@/core/config";
 
 interface QueryInterface {
     name: string;
@@ -28,7 +28,9 @@ export function post(url: string, body: unknown) {
     return fetch(url, {
         method: "POST",
         headers: {
-            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+            "X-Auth-Email": email,
+            "X-Auth-Key": token,
         },
         body: JSON.stringify(body),
     });
