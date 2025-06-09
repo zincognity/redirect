@@ -1,6 +1,6 @@
-import { zoneId } from "../core/config";
-import type { PageRuleResponse } from "../core/types";
-import { get, post, remove, update } from "../utils/fetch";
+import { zoneId } from "@/core/config";
+import type { PageRuleResponse } from "@/core/types";
+import { get, post, remove, update } from "@/utils/fetch";
 
 export async function getListPageRules(): Promise<PageRuleResponse> {
     const response = await get(

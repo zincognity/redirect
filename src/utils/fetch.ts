@@ -1,4 +1,4 @@
-import { token } from "../core/config";
+import { token } from "@/core/config";
 
 interface QueryInterface {
     name: string;
