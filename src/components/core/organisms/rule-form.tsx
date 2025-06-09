@@ -70,6 +70,7 @@ export default function PageRuleForm() {
     return (
         <form
             onSubmit={handleSubmit}
+            autoComplete="off"
             className="grid md:grid-cols-3 gap-4 mb-8 text-left"
         >
             <div className="flex flex-col gap-1">
@@ -96,7 +97,14 @@ export default function PageRuleForm() {
                     placeholder="abc123"
                     className="bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-2 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
+                <input
+                    type="text"
+                    name="fakeusername"
+                    style={{ display: "none" }}
+                    autoComplete="off"
+                />
             </div>
+
             <div className="flex flex-col gap-1">
                 <label htmlFor="auth" className="text-sm text-zinc-400">
                     Auth Code
@@ -105,7 +113,7 @@ export default function PageRuleForm() {
                     type="password"
                     id="auth"
                     name="auth"
-                    autoComplete="current-password"
+                    autoComplete="nope"
                     placeholder="••••••••"
                     className="bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-2 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
