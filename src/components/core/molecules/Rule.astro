@@ -27,7 +27,7 @@ const { rule } = Astro.props;
                 rule.actions.map((r) => (
                     <li>
                         <a
-                            href={r.value.url}
+                            href={rule.targets[0]?.constraint?.value}
                             target="_blank"
                             rel="noopener noreferrer"
                             class="hover:underline"

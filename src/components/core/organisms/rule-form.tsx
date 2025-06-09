@@ -64,6 +64,7 @@ export default function PageRuleForm() {
             console.error("Network error:", err);
             toast.error("Network error while trying to save the redirect");
         }
+        window.location.reload();
     };
 
     return (
@@ -91,6 +92,7 @@ export default function PageRuleForm() {
                     type="text"
                     id="hash"
                     name="hash"
+                    autoComplete="off"
                     placeholder="abc123"
                     className="bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-2 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
@@ -103,6 +105,7 @@ export default function PageRuleForm() {
                     type="password"
                     id="auth"
                     name="auth"
+                    autoComplete="current-password"
                     placeholder="••••••••"
                     className="bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-2 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
