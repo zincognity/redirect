@@ -11,6 +11,11 @@ export default defineConfig({
     integrations: [react()],
     vite: {
         plugins: [tailwindcss()],
+        server: {
+            fs: {
+                allow: [process.cwd()],
+            },
+        },
     },
     output: "static",
     adapter: node({
