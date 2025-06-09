@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@astrojs/node": "^9.2.2",
+    "@astrojs/react": "^4.3.0",
     "@tailwindcss/vite": "^4.1.8",
     "astro": "^5.9.1",
+    "sonner": "^2.0.5",
     "tailwindcss": "^4.1.8"
   }
 }
