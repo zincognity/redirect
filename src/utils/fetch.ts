@@ -31,6 +31,7 @@ export function post(url: string, body: unknown) {
             "Content-Type": "application/json",
             "X-Auth-Email": email,
             "X-Auth-Key": token,
+            Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(body),
     });
