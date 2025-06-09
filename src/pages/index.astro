@@ -1,4 +1,5 @@
 ---
+import Sonner from "@/components/core/molecules/Sonner.astro";
 import RuleForm from "@/components/core/organisms/RuleForm.astro";
 import RulesList from "@/components/core/organisms/RulesList.astro";
 import "@styles";
@@ -34,6 +35,7 @@ const description = "Manage and view your redirection rules";
         />
     </head>
     <body class="min-h-screen flex flex-col items-center pt-[10%] px-4 py-12">
+        <Sonner />
         <main class="w-full max-w-[90%] md:max-w-[80%] text-center">
             <h1 class="text-5xl font-extrabold mb-6 text-white drop-shadow">
                 {title}

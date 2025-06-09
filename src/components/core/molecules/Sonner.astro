@@ -1,0 +1,19 @@
+---
+import { Toaster } from "sonner";
+import "sonner/dist/styles.css";
+---
+
+<Toaster
+    theme="light"
+    duration={7500}
+    toastOptions={{
+        style: {
+            backgroundColor: "var(--color-primary-950)",
+            fontFamily: "var(--default-font-family)",
+            borderRadius: "var(--spacing)",
+        },
+    }}
+    richColors
+    client:load
+    transition:persist
+/>
