@@ -14,18 +14,20 @@ export interface Target {
 export interface Action {
     id: string;
     value: {
+        status_code: number;
         url: string;
     };
 }
 
 export interface PageRule {
-    id: string;
+    id?: string;
     actions: Action[];
-    create_on: string;
-    modified_on: string;
+    create_on?: string;
+    modified_on?: string;
     priority: number;
     status: "active" | "disabled";
     targets: Target[];
+    authentication?: string;
 }
 
 export interface PageRuleResponse {

@@ -1,4 +1,5 @@
 import { site } from "@/core/config";
+import type { PageRule } from "@/core/types";
 import { toast } from "sonner";
 
 export default function PageRuleForm() {
@@ -19,7 +20,7 @@ export default function PageRuleForm() {
 
         const redirectFrom = `${site}/${hash.trim()}`;
 
-        const pageRule = {
+        const pageRule: PageRule = {
             actions: [
                 {
                     id: "forwarding_url",

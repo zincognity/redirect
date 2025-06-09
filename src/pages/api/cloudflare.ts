@@ -1,11 +1,12 @@
 import { authCode } from "@/core/config";
+import type { PageRule } from "@/core/types";
 import { createPageRule } from "@/services/page-rules";
 import type { APIRoute } from "astro";
 
 export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
-    const body = await request.json();
+    const body: PageRule = await request.json();
 
     const { authentication } = body;
 

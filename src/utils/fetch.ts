@@ -1,4 +1,5 @@
 import { email, token } from "@/core/config";
+import type { PageRule } from "@/core/types";
 
 interface QueryInterface {
     name: string;
@@ -24,7 +25,7 @@ export function get(url: string, ...query: QueryInterface[]) {
     });
 }
 
-export function post(url: string, body: unknown) {
+export function post(url: string, body: PageRule) {
     return fetch(url, {
         method: "POST",
         headers: {
