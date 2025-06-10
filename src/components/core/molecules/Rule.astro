@@ -1,6 +1,7 @@
 ---
 import { pageUrl } from "@/core/config";
 import type { PageRule } from "@/core/types";
+import DeleteButton from "../atoms/delete-button";
 
 interface Props {
     rule: PageRule;
@@ -10,33 +11,39 @@ const { rule } = Astro.props;
 ---
 
 <div
-    class="bg-zinc-900 border border-zinc-800 rounded-lg shadow-sm p-4 hover:border-indigo-500 transition flex items-start justify-between gap-8"
+    class="bg-zinc-900 border border-zinc-800 rounded-lg shadow-sm p-4 hover:border-indigo-500 transition flex flex-col gap-4"
 >
-    <div class="w-1/2">
-        <ul class="list-inside text-white space-y-1">
-            {
-                rule.targets.map((r) => (
-                    <li>{r.constraint?.value.replace(`${pageUrl}/`, "")}</li>
-                ))
-            }
-        </ul>
-    </div>
-    <div class="w-1/2">
-        <ul class="list-inside text-indigo-400 space-y-1 break-words">
-            {
-                rule.actions.map((r) => (
-                    <li>
-                        <a
-                            href={rule.targets[0]?.constraint?.value}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="hover:underline"
-                        >
-                            {r.value.url}
-                        </a>
-                    </li>
-                ))
-            }
-        </ul>
+    <div class="flex items-start justify-between gap-8">
+        <div class="w-1/2">
+            <ul class="list-inside text-white space-y-1">
+                {
+                    rule.targets.map((r) => (
+                        <li>
+                            {r.constraint?.value.replace(`${pageUrl}/`, "")}
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+        <div class="w-1/2">
+            <ul class="list-inside text-indigo-400 space-y-1 break-words">
+                {
+                    rule.actions.map((r) => (
+                        <li>
+                            <a
+                                href={rule.targets[0]?.constraint?.value}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="hover:underline"
+                            >
+                                {r.value.url}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+
+        <DeleteButton id={rule.id!} client:load />
     </div>
 </div>
