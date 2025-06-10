@@ -61,6 +61,7 @@ export default function PageRuleForm() {
             }
 
             toast.success("Redirect created successfully.");
+            setTimeout(() => location.reload(), 1000);
         } catch (err) {
             console.error("Network error:", err);
             toast.error("Network error while trying to save the redirect");
