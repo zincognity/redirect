@@ -1,47 +1,59 @@
-# Astro Starter Kit: Minimal
+# Redirect Cloudflare
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+A modern web interface for managing Cloudflare **Page Rules** and easily
+creating **Redirect Shortcuts**, built with [Astro](https://astro.build/) and
+[React](https://react.dev/).
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## 🚀 Characteristics
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This project provides a visual tool for:
 
-## 🚀 Project Structure
+- 🛠️ Listing, creating, and deleting redirect rules (`Page Rules`) on your
+  Cloudflare domain.
+- ⚡ Adding custom shortcuts (such as `/github` →
+  `https://github.com/youruser`).
+- 💡 Intuitive React interface, easily deployable as a SPA or integrated into an
+  existing site.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🧰 Technologies Used
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- [Astro](https://astro.build/) – Lightweight and flexible framework for
+  websites.
+- [React](https://react.dev/) – For interactive components within Astro.
+- [Cloudflare API](https://developers.cloudflare.com/api/resources/page_rules/methods/list/)
+  – For managing page rules.
+- [Tailwind CSS](https://tailwindcss.com/) – Modern and responsive styles.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🧭 Initialize
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. ```bash
+   git clone https://github.com/zincognity/redirect-cloudflare.git
+   cd redirect-cloudflare
+   ```
 
-Any static assets, like images, can be placed in the `public/` directory.
+2. Set the environment variables.
 
-## 🧞 Commands
+- CLOUDFLARE_TOKEN=(you can get one at
+  <https://dash.cloudflare.com/profile/api-tokens>)
 
-All commands are run from the root of the project, from a terminal:
+  > [!NOTE] Check that the token permissions have all the accepted permissions
+  > in
+  > [Cloudflare Docs](https://developers.cloudflare.com/api/resources/page_rules/methods/list/)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+- CLOUDFLARE_EMAIL=(your email account for Cloudflare)
+- ZONE_ID=(you can view on
+  <https://dash.cloudflare.com/4ced315a6db9ab9551778e8d8bdbf2e1/incognity.link/rules/page-rules> >
+  display API)
+- AUTH_CODE=(ej: anycodeforyourauthentication)
+- PUBLIC_URL=(ej: <https://incognity.link>)
 
-## 👀 Want to learn more?
+## 🔗 Useful resources
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Documentation of
+  [URL Redirect Rules in Cloudflare](https://developers.cloudflare.com/rules/url-forwarding/?utm_source=chatgpt.com)
+
+- Best practices for
+  [redirects in Cloudflare](https://noamlerner.com/posts/cloudflare_page_rule/?utm_source=chatgpt.com)
+
+- Comparisons of
+  [Page Rules vs Workers](https://developers.cloudflare.com/rules/url-forwarding/?utm_source=chatgpt.com)
