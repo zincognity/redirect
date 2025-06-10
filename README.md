@@ -36,9 +36,8 @@ This project provides a visual tool for:
 - CLOUDFLARE_TOKEN=(you can get one at
   <https://dash.cloudflare.com/profile/api-tokens>)
 
-  > [!NOTE] Check that the token permissions have all the accepted permissions
-  > in
-  > [Cloudflare Docs](https://developers.cloudflare.com/api/resources/page_rules/methods/list/)
+> [!NOTE] Check that the token permissions have all the accepted permissions in
+> [Cloudflare Docs](https://developers.cloudflare.com/api/resources/page_rules/methods/list/)
 
 - CLOUDFLARE_EMAIL=(your email account for Cloudflare)
 - ZONE_ID=(you can view on
