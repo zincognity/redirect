@@ -1,5 +1,6 @@
 import { site } from "@/core/config";
 import type { PageRule } from "@/core/types";
+import { useEffect } from "react";
 import { toast } from "sonner";
 
 export default function PageRuleForm() {
@@ -60,14 +61,21 @@ export default function PageRuleForm() {
                 return;
             }
 
+            localStorage.setItem("authCode", auth);
             toast.success("Redirect created successfully.");
             setTimeout(() => location.reload(), 1000);
         } catch (err) {
             console.error("Network error:", err);
+            localStorage.removeItem("authCode");
             toast.error("Network error while trying to save the redirect");
         }
         window.location.reload();
     };
+
+    useEffect(() => {
+        const authInput = document.getElementById("auth") as HTMLInputElement;
+        authInput.value = localStorage.getItem("authCode") ?? "";
+    });
 
     return (
         <form
