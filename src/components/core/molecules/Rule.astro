@@ -13,9 +13,11 @@ const { rule } = Astro.props;
 <div
     class="bg-zinc-900 border border-zinc-800 rounded-lg shadow-sm p-4 hover:border-indigo-500 transition flex flex-col gap-4"
 >
-    <div class="flex items-start justify-between gap-8">
-        <div class="w-1/2">
-            <ul class="list-inside text-white space-y-1">
+    <div
+        class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4"
+    >
+        <div class="w-full sm:w-[40%]">
+            <ul class="list-inside text-white space-y-1 break-words">
                 {
                     rule.targets.map((r) => (
                         <li>
@@ -25,10 +27,10 @@ const { rule } = Astro.props;
                 }
             </ul>
         </div>
-        <div class="w-1/2">
+        <div class="w-full sm:w-[50%]">
             <ul class="list-inside text-indigo-400 space-y-1 break-words">
                 {
-                    rule.actions.map((r) => (
+                    rule.actions.map((r, i) => (
                         <li>
                             <a
                                 href={rule.targets[0]?.constraint?.value}

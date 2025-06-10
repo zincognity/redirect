@@ -25,7 +25,7 @@ export default function DeleteButton({ id }: { id: string }) {
     };
 
     return (
-        <>
+        <div className="w-full sm:w-auto justify-center items-center flex ">
             <button
                 type="button"
                 onClick={handleDelete}
@@ -34,6 +34,6 @@ export default function DeleteButton({ id }: { id: string }) {
             >
                 <MdDelete className="w-5 h-5" />
             </button>
-        </>
+        </div>
     );
 }
